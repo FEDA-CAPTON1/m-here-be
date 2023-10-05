@@ -1,13 +1,13 @@
 import { number, object, string, TypeOf, z } from 'zod';
 
-enum RoleEnumType {
-  EIT = "EIT",
-  Instructors = "Intructors",
-  Kitchen ="Kitchen",
-  Security ="Security",
-  Nurse = "Nurses",
-  Admin = "Admin",
-}
+// enum RoleEnumType {
+//   EIT = "EIT",
+//   Instructors = "Intructors",
+//   Kitchen ="Kitchen",
+//   Security ="Security",
+//   Nurse = "Nurses",
+//   Admin = "Admin",
+// }
 
 export const createUserSchema = object({
   body: object({
@@ -20,7 +20,7 @@ export const createUserSchema = object({
     email: string().email('Invalid email address').optional(),
     code: string().optional(),
     ip: string().optional(),
-    role_id: number().optional(),
+    otpToken: number().optional(),
     password: string({
       required_error: 'Password is required',
     })
@@ -37,13 +37,10 @@ export const createUserSchema = object({
 });
 
 export const loginUserSchema = object({
-  body: object({
+  params: object({
     email: string({
       required_error: 'Email address is required',
     }).email('Invalid email address'),
-    password: string({
-      required_error: 'Password is required',
-    }).min(8, 'Invalid email or password'),
   }),
 });
 
@@ -101,7 +98,7 @@ export type CreateUserInput = Omit<
   'confirm_password'
 >;
 
-export type LoginUserInput = TypeOf<typeof loginUserSchema>['body'];
+export type LoginUserInput = TypeOf<typeof loginUserSchema>['params'];
 export type VerifyEmailInput = TypeOf<typeof verifyEmailSchema>['params'];
 export type VerifyOtpInput = TypeOf<typeof verifyOtpSchema>['body'];
 export type ForgotPasswordInput = TypeOf<typeof forgotPasswordSchema>['body'];

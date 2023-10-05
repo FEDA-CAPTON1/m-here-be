@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserInstance = void 0;
 const sequelize_1 = require("sequelize");
 const db_config_1 = __importDefault(require("../config/db.config"));
-// import { ProductInstance } from './products'
+const attendance_model_1 = require("./attendance.model");
+const report_model_1 = require("./report.model");
 class UserInstance extends sequelize_1.Model {
 }
 exports.UserInstance = UserInstance;
@@ -17,11 +18,7 @@ UserInstance.init({
         autoIncrement: true,
         allowNull: false
     },
-    user_type_id: {
-        type: sequelize_1.DataTypes.INTEGER,
-        allowNull: true
-    },
-    first_name: {
+    firstName: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -33,24 +30,12 @@ UserInstance.init({
             }
         }
     },
-    last_name: {
+    lastName: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
         validate: {
             notNull: {
                 msg: "Full name is required"
-            },
-            notEmpty: {
-                msg: "Enter a field"
-            }
-        }
-    },
-    gender: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: {
-                msg: "Gender is required"
             },
             notEmpty: {
                 msg: "Enter a field"
@@ -69,29 +54,9 @@ UserInstance.init({
             }
         }
     },
-    phone: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: {
-                msg: "Phone number is required"
-            },
-            notEmpty: {
-                msg: "Enter a field"
-            }
-        }
-    },
-    address: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: {
-                msg: "Address is required"
-            },
-            notEmpty: {
-                msg: "Enter a field"
-            }
-        }
+    otpToken: {
+        type: sequelize_1.DataTypes.NUMBER,
+        allowNull: true
     },
     password: {
         type: sequelize_1.DataTypes.BOOLEAN,
@@ -109,13 +74,20 @@ UserInstance.init({
     sequelize: db_config_1.default,
     tableName: 'users'
 });
-// UserInstance.hasMany(ProductInstance,
-//     {
-//         foreignKey: "userId",
-//         as: "products"
-//     });
-// ProductInstance.belongsTo(UserInstance, {
-//     foreignKey: 'userId',
-//     as: 'user'
-// })
+UserInstance.hasMany(attendance_model_1.AttendanceInstance, {
+    foreignKey: "userId",
+    as: "attendance"
+});
+attendance_model_1.AttendanceInstance.belongsTo(UserInstance, {
+    foreignKey: 'userId',
+    as: 'user'
+});
+UserInstance.hasMany(report_model_1.ReportInstance, {
+    foreignKey: "userId",
+    as: "report"
+});
+report_model_1.ReportInstance.belongsTo(UserInstance, {
+    foreignKey: 'userId',
+    as: 'user'
+});
 //# sourceMappingURL=user.model.js.map

@@ -1,1 +1,8 @@
 node_modules
+
+git commit -m "first commit"
+git branch -M develop
+git remote add origin https://github.com/M-Here/m-here-be.git
+git push -u origin develop
+
+.env

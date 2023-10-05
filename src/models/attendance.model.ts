@@ -17,6 +17,7 @@ AttendanceInstance.init(
     attendanceEnum: {
             type: DataTypes.ENUM,
             values: ["YES", "NO"],
+            allowNull:false
         },
     reason: {
         type: DataTypes.STRING,

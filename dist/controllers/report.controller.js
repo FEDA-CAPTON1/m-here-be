@@ -1,3 +1,4 @@
+"use strict";
 // import crypto from 'crypto';
 // import { CookieOptions, NextFunction, Request, Response } from 'express';
 // import bcrypt from 'bcryptjs';
@@ -7,21 +8,17 @@
 //   VerifyEmailInput,
 //   VerifyOtpInput,
 // } from '../schemas/user.schema';
-
 // import { UserService } from '../services/user.service';
 // const userService = new UserService;
-
 // import config from 'config';
 // import AppError from '../utils/app.error';
 // import redisClient from '../utils/connect.redis';
 // import { signJwt, verifyJwt } from '../utils/jwt';
 // import Email from '../utils/email.service.ts';
-
 // const cookiesOptions: CookieOptions = {
 //   httpOnly: true,
 //   sameSite: 'lax',
 // };
-
 // const accessTokenCookieOptions: CookieOptions = {
 //   ...cookiesOptions,
 //   expires: new Date(
@@ -29,7 +26,6 @@
 //   ),
 //   maxAge: config.get<number>('accessTokenExpiresIn') * 60 * 1000,
 // };
-
 // const refreshTokenCookieOptions: CookieOptions = {
 //   ...cookiesOptions,
 //   expires: new Date(
@@ -37,7 +33,6 @@
 //   ),
 //   maxAge: config.get<number>('refreshTokenExpiresIn') * 60 * 1000,
 // };
-
 // export const registerUserHandler = async (
 //   req: Request<{}, {}, RegisterUserInput> | any,
 //   res: Response,
@@ -46,12 +41,10 @@
 //   try {
 //     const hashedPassword = await bcrypt.hash(req.body.password, 12);
 //     const verifyCode = crypto.randomBytes(32).toString('hex');
-
 //     const email_verification_code = crypto
 //       .createHash('sha256')
 //       .update(verifyCode)
 //       .digest('hex');
-
 //     const userData = {
 //       role_id: req.body.role_id,
 //       role: req.body.role,
@@ -68,12 +61,9 @@
 //       password: hashedPassword,
 //       email_verification_code
 //     }
-   
 //     const user = await createUser(userData);
-    
 //     const baseUrl = process.env.BASE_URL;
 //     const emailVerificationRedirectUrl = `${baseUrl}/api/v1/auth/verifyemail/${verifyCode}`;
-    
 //     await new Email(user, emailVerificationRedirectUrl).sendVerificationCode();
 //     // if (user.role != "Farmer") {}
 //       try { 
@@ -91,9 +81,6 @@
 //           message: 'There was an error sending email, please try again',
 //         });
 //       }
-    
-
-
 //   } catch (err: any) {   
 //     if (err instanceof Prisma.PrismaClientKnownRequestError) {
 //       if (err.code === 'P2002') {
@@ -106,3 +93,4 @@
 //     next(err);
 //   }
 // };
+//# sourceMappingURL=report.controller.js.map
