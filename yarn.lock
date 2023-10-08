@@ -6667,27 +6667,27 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swagger-autogen@^2.23.1:
-  version "2.23.4"
-  resolved "https://registry.yarnpkg.com/swagger-autogen/-/swagger-autogen-2.23.4.tgz#6849e38ec928436486dc6ab747635930eb84b066"
-  integrity sha512-ULBL813nFS87VU9DAgdzaKfjcQEpJvO/N4sSoMXOaA9B5SGSSSA1WY04ao2LHaPGhZTPVCH6lD90suiODtSGeA==
+swagger-autogen@^2.23.6:
+  version "2.23.6"
+  resolved "https://registry.yarnpkg.com/swagger-autogen/-/swagger-autogen-2.23.6.tgz#2aa55fa1c14fa0d6b55650e0066e7e2f4921912e"
+  integrity sha512-KoAMXvZJNqHHY0TpTxgapsxnO8eGjR5b6zQgTXYcIqi59EEQQcTI7MoZtf28CmDqjNjj+EGaC7Fsecln+ov4VQ==
   dependencies:
     acorn "^7.4.1"
     deepmerge "^4.2.2"
     glob "^7.1.7"
     json5 "^2.2.3"
 
-swagger-ui-dist@>=4.11.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.1.0.tgz#b01b3be06bebb2566b2df586c1632d502ec792ad"
-  integrity sha512-c1KmAjuVODxw+vwkNLALQZrgdlBAuBbr2xSPfYrJgseEi7gFKcTvShysPmyuDI4kcUa1+5rFpjWvXdusKY74mg==
+swagger-ui-dist@>=5.0.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.8.0.tgz#f42114ee49512b2fb799560ac325b3003b828d06"
+  integrity sha512-gTCaK44OG0/iRY9n5TBny8NLpn476KXDcCD4FHDA133lsJovow3jt1hBwNsOQdu6dvc9ImSHcnI8e4g121ghQQ==
 
-swagger-ui-express@^4.6.2:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.6.3.tgz#870d0892654fe80e6970a2d680e22521acd2dc19"
-  integrity sha512-CDje4PndhTD2HkgyKH3pab+LKspDeB/NhPN2OF1j+piYIamQqBYwAXWESOT1Yju2xFg51bRW9sUng2WxDjzArw==
+swagger-ui-express@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-5.0.0.tgz#7a00a18dd909574cb0d628574a299b9ba53d4d49"
+  integrity sha512-tsU9tODVvhyfkNSvf03E6FAk+z+5cU3lXAzMy6Pv4av2Gt2xA0++fogwC4qo19XuFf6hdxevPuVCSKFuMHJhFA==
   dependencies:
-    swagger-ui-dist ">=4.11.0"
+    swagger-ui-dist ">=5.0.0"
 
 table@^5.2.3:
   version "5.4.6"

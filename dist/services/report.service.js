@@ -1,6 +1,6 @@
+"use strict";
 // import { ReportInstance } from '../models/report.model';
 // import { CreateReportInput } from '../schemas/report.schema'
-
 // export class ReportService {
 //   public async createReport(data: CreateReportInput): Promise<CreateReportInput> {
 //     return (
@@ -8,3 +8,4 @@
 //     ) as ReportInstance;
 //   }
 // }
+//# sourceMappingURL=report.service.js.map

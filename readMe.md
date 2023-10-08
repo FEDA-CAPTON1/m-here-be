@@ -8,5 +8,7 @@
 - zod for validation
 
 ### Scripts
+. start npm yarn start
+. yarn start:div
 
 

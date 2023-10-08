@@ -1,1 +1,0 @@
-host hello world to cpanel and connect with db, use server console to console.log connection.

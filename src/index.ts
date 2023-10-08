@@ -11,7 +11,7 @@ import cookieParser from 'cookie-parser';
 
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-// import swaggerFile from './swagger-output.json';
+import swaggerFile from './swagger.json';
 
 import testRouter from "./routes/test.route";
 
@@ -26,18 +26,14 @@ const app = express();
   app.use(express.json({limit: '10kb' }));
   app.use(cookieParser());
 
-  // Allow requests from any origin
-
-  app.use((req: Request, res: Response, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
-  // Forward all other requests to Next.js
+  // app.use((req: Request, res: Response, next) => {
+  //   res.setHeader('Access-Control-Allow-Origin', '*');
+  //   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  //   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  //   next();
+  // });
  
   app.use(cors({
-    //   origin: [config.get<string>('origin')],
       credentials: true,
   }));
   
@@ -45,32 +41,22 @@ const app = express();
   
   app.use(express.urlencoded({ extended: false }));
 
-  app.get('/', (req, res) => {
-    res.send('Hello World! Novel-AG');
-  });
+  // app.get('/', (req, res) => {
+  //   res.send('Hello World! Novel-AG');
+  // });
 
-//   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+  // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-  app.get('/api/healthchecker', (_, res: Response) => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Welcome to NodeJs with Prisma and PostgreSQL',
-    });
-  });
+  // app.get('/api/healthchecker', (_, res: Response) => {
+  //   res.status(200).json({
+  //     status: 'success',
+  //     message: 'Welcome to NodeJs with Prisma and PostgreSQL',
+  //   });
+  // });
 
-  app.use('/api/test', testRouter);
+  // app.use('/api/test', testRouter);
 //   app.use('/api/v1/auth', authRouter);
 //   app.use('/api/v1/user', userRouter);
-//   app.use('/api/v1/farmer', farmerRouter);
-//   app.use('/api/v1/prosperity-hub', prosperityHubRouter);
-//   app.use('/api/v1/warehouse', warehouseRouter);
-//   app.use('/api/v1/farm', farmRouter);
-//   app.use('/api/v1/util', utilsRouter);
-//   app.use('/api/v1/assign', rolesAndPermissions);
-
-//   app.all('*', (req: Request, res: Response, next: NextFunction) => {
-//     next(new AppError(404, `Route ${req.originalUrl} not found`));
-//   });
 
   app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
     err.status = err.status || 'error';

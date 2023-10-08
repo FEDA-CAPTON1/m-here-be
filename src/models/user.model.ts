@@ -54,6 +54,10 @@ UserInstance.init(
             }
         }
         },
+    otpToken: {
+        type: DataTypes.NUMBER,
+        allowNull: true
+    },
     password: {
             type: DataTypes.BOOLEAN,
         allowNull: false,
