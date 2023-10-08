@@ -9,5 +9,6 @@
 
 ### Scripts
 . start npm yarn start
+. yarn start:div
 
 
